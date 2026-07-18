@@ -1,4 +1,5 @@
-const getCroppedImageURL = (url: string) => {
+const getCroppedImageURL = (url: string | null) => {
+  if (!url) return "";
   return url.replace("/media/", "/media/crop/600/400/");
 };
 
