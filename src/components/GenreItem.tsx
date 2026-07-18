@@ -1,12 +1,13 @@
-import { HStack, Image, Text } from "@chakra-ui/react";
+import { HStack, Image, Button } from "@chakra-ui/react";
 import type { Genre } from "../hooks/useGenres";
 import getCroppedImageURL from "../services/image-url";
 
 interface Props {
   genre: Genre;
+  onClick: () => void;
 }
 
-const GenreItem = ({ genre }: Props) => {
+const GenreItem = ({ genre, onClick }: Props) => {
   return (
     <HStack>
       <Image
@@ -15,7 +16,9 @@ const GenreItem = ({ genre }: Props) => {
         src={getCroppedImageURL(genre.image_background)}
         alt={genre.name}
       />
-      <Text fontSize="lg">{genre.name}</Text>
+      <Button onClick={onClick} fontSize="lg" variant="link">
+        {genre.name}
+      </Button>
     </HStack>
   );
 };
