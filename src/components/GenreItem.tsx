@@ -13,6 +13,7 @@ const GenreItem = ({ genre, isSelected, onClick }: Props) => {
     <HStack>
       <Image
         boxSize="32px"
+        objectFit="cover"
         borderRadius={8}
         src={getCroppedImageURL(genre.image_background)}
         alt={genre.name}
