@@ -13,6 +13,7 @@ export interface Game {
   background_image: string | null;
   parent_platforms: { platform: Platform }[] | null;
   metacritic: number;
+  rating_top: number;
 }
 
 const useGames = (gameQuery: GameQuery) =>
