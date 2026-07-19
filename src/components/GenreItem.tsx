@@ -17,7 +17,14 @@ const GenreItem = ({ genre, isSelected, onClick }: Props) => {
         src={getCroppedImageURL(genre.image_background)}
         alt={genre.name}
       />
-      <Button onClick={onClick} fontSize="lg" variant="link" fontWeight={isSelected ? "bold" : "normal"}>
+      <Button
+        whiteSpace="normal"
+        textAlign="left"
+        onClick={onClick}
+        fontSize="lg"
+        variant="link"
+        fontWeight={isSelected ? "bold" : "normal"}
+      >
         {genre.name}
       </Button>
     </HStack>
