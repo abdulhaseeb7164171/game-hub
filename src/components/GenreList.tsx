@@ -4,11 +4,11 @@ import GenreItem from "./GenreItem";
 import GenreItemSkeleton from "./GenreItemSkeleton";
 
 interface Props {
-  selectedGenre: Genre | null;
+  selectedGenreId?: number;
   onSelectGenre: (genre: Genre) => void;
 }
 
-const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
+const GenreList = ({ selectedGenreId, onSelectGenre }: Props) => {
   const { data, isLoading, error } = useGenres();
 
   if (error) return null;
@@ -29,7 +29,7 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
           <ListItem key={genre.id} paddingY="5px">
             <GenreItem
               genre={genre}
-              isSelected={genre.id === selectedGenre?.id}
+              isSelected={genre.id === selectedGenreId}
               onClick={() => onSelectGenre(genre)}
             />
           </ListItem>
