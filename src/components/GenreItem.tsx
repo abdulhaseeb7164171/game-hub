@@ -1,14 +1,16 @@
 import { HStack, Image, Button } from "@chakra-ui/react";
 import type { Genre } from "../hooks/useGenres";
 import getCroppedImageURL from "../services/image-url";
+import { useSelector } from "@tanstack/react-store";
+import { gameQueryStore } from "../store";
+import { gameQueryActions } from "../store.actions";
 
 interface Props {
   genre: Genre;
-  isSelected: boolean;
-  onClick: () => void;
 }
 
-const GenreItem = ({ genre, isSelected, onClick }: Props) => {
+const GenreItem = ({ genre }: Props) => {
+  const selectedGenreId = useSelector(gameQueryStore, (s) => s.genreId);
   return (
     <HStack>
       <Image
@@ -21,10 +23,10 @@ const GenreItem = ({ genre, isSelected, onClick }: Props) => {
       <Button
         whiteSpace="normal"
         textAlign="left"
-        onClick={onClick}
+        onClick={() => gameQueryActions.setGenreId(genre.id)}
         fontSize="lg"
         variant="link"
-        fontWeight={isSelected ? "bold" : "normal"}
+        fontWeight={selectedGenreId === genre.id ? "bold" : "normal"}
       >
         {genre.name}
       </Button>
