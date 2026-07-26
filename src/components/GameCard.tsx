@@ -1,4 +1,5 @@
 import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
+import { Link } from "@tanstack/react-router";
 import type { Game } from "../hooks/useGames";
 import getCroppedImageURL from "../services/image-url";
 import CriticScore from "./CriticScore";
@@ -20,7 +21,9 @@ const GameCard = ({ game }: Props) => {
           <CriticScore score={game.metacritic} />
         </HStack>
         <Heading fontSize="2xl">
-          {game.name} <Emoji rating={game.rating_top} />
+          <Link to={`/game/$slug`} params={{ slug: game.slug }}>
+            {game.name} <Emoji rating={game.rating_top} />
+          </Link>
         </Heading>
       </CardBody>
     </Card>

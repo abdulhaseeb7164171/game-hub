@@ -3,11 +3,14 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import NavBar from "../components/NavBar";
 import { ErrorPage } from "../components/error/error-page";
 import { NotFoundPage } from "../components/error/not-found-page";
+import { Box } from "@chakra-ui/react";
 
 const RootLayout = () => (
   <>
     <NavBar />
-    <Outlet />
+    <Box padding={5}>
+      <Outlet />
+    </Box>
     <TanStackRouterDevtools />
   </>
 );
