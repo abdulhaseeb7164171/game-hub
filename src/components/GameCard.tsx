@@ -1,6 +1,6 @@
 import { Card, CardBody, Heading, HStack, Image } from "@chakra-ui/react";
 import { Link } from "@tanstack/react-router";
-import type { Game } from "../hooks/useGames";
+import type { Game } from "../entities/Game";
 import getCroppedImageURL from "../services/image-url";
 import CriticScore from "./CriticScore";
 import Emoji from "./Emoji";
