@@ -3,7 +3,7 @@ import APIClient, { type FetchResponse } from "../services/api-client";
 import ms from "ms";
 import { useSelector } from "@tanstack/react-store";
 import { gameQueryStore } from "../store";
-import type { Game } from "../entities/Game";
+import type Game from "../entities/Game";
 
 const apiClient = new APIClient<Game>("/games");
 
