@@ -1,8 +1,9 @@
 import { createFileRoute, notFound } from "@tanstack/react-router";
 
-import useGame from "../../hooks/useGame";
-import { Heading, Spinner, Text } from "@chakra-ui/react";
+import { Heading, Spinner } from "@chakra-ui/react";
 import ExpandableText from "../../components/ExpandableText";
+import GameAttributes from "../../components/GameAttributes";
+import useGame from "../../hooks/useGame";
 
 export const Route = createFileRoute("/game/$slug")({
   component: RouteComponent,
@@ -21,6 +22,7 @@ function RouteComponent() {
     <>
       <Heading>{game.name}</Heading>
       <ExpandableText children={game.description_raw} />
+      <GameAttributes game={game} />
     </>
   );
 }
