@@ -4,6 +4,7 @@ import { Heading, Spinner } from "@chakra-ui/react";
 import ExpandableText from "../../components/ExpandableText";
 import GameAttributes from "../../components/GameAttributes";
 import useGame from "../../hooks/useGame";
+import GameTrailer from "../../components/GameTrailer";
 
 export const Route = createFileRoute("/game/$slug")({
   component: RouteComponent,
@@ -23,6 +24,7 @@ function RouteComponent() {
       <Heading>{game.name}</Heading>
       <ExpandableText children={game.description_raw} />
       <GameAttributes game={game} />
+      <GameTrailer gameId={game.id} />
     </>
   );
 }
