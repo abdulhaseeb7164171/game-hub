@@ -75,11 +75,10 @@ Game Hub is a comprehensive platform that allows users to seamlessly browse, sea
    ```
 
 3. **Configure Environment Variables:**
-   Create a `.env` file in the root of the project and add your RAWG API key:
+   Create a `.env` file in the root of the project and add your RAWG API key (you can copy `.env.example`):
    ```env
    VITE_RAWG_API_KEY=your_api_key_here
    ```
-   *(Note: The project currently might have a default key in `src/services/api-client.ts`, but it's highly recommended to use your own.)*
 
 4. **Start the development server:**
    ```bash
